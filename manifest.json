@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "GitLab Merge Request Shortcuts",
+  "version": "0.0.1",
+  "description": "Shortcuts for GitLab new merge request page",
+  "permissions": ["scripting", "tabs"],
+  "host_permissions": ["https://*/*/*/*/merge_requests/*"],
+  "author": "@veekhere",
+  "content_scripts": [
+    {
+      "matches": ["https://*/*/*/*/merge_requests/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "128": "/icon_128.png"
+    },
+    "icons": {
+      "16": "/icon_16.png",
+      "24": "/icon_24.png",
+      "32": "/icon_32.png",
+      "64": "/icon_64.png",
+      "128": "/icon_128.png"
+    }
+  },
+  "commands": {
+    "focus-title": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+1",
+        "mac": "MacCtrl+1"
+      },
+      "description": "Focus title"
+    },
+    "focus-description": {
+      "description": "Focus description"
+    },
+    "focus-assignee": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+2",
+        "mac": "MacCtrl+2"
+      },
+      "description": "Focus assignee"
+    },
+    "focus-reviewer": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+3",
+        "mac": "MacCtrl+3"
+      },
+      "description": "Focus reviewer"
+    },
+    "focus-milestone": {
+      "description": "Focus milestone"
+    },
+    "focus-labels": {
+      "description": "Focus labels"
+    },
+    "confirm": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+C",
+        "mac": "MacCtrl+C"
+      },
+      "description": "Create merge request"
+    }
+  }
+}
